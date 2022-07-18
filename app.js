@@ -1,6 +1,6 @@
 "use strict"
 const express=require ("express");
-const PORT =3030;
+const port =process.env.PORT;
 const hbs = require("hbs")
 const path=require("path")
 const app=express()
@@ -15,6 +15,6 @@ hbs.registerPartials(path.join(__dirname,"./views/partials"))
 
 
 
-app.listen(PORT,()=>{
-    console.warn(`Server corriendo en http://localhost:${PORT}`)
+app.listen(port,()=>{
+    console.warn(`Server corriendo en http://localhost:${port}`)
 })
