@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/da18d32912.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/css/style.css">
+    <title>Envio de Mail</title>
+</head>
+<body class="container">
+   <main>
+        <section>
+    <div class="hero">
+             <div class="titulo">
+            <h1>Envio de Mail</h1>
+        </div>
+        <form action="/" method="POST">
+            <div class="row">
+            <div class="input-group">
+           <input type="text" name="name" id="name" required {{#if infoCorrecta.name}}value="{{infoCorrecta.name}}"{{/if}}>
+           <label for="name "><i class="fas fa-user"></i> Nombre</label> 
+        </div>
+        <div class="input-group">
+            <input type="text" id="lastName" name="lastName" required {{#if infoCorrecta.lastName}}value="{{infoCorrecta.lastName}}"{{/if}}>
+            <label for="lastName "><i class="fas fa-user-plus"></i> Apellido</label> 
+         </div>
+        </div>
+         <div class="input-group">
+            <input type="email" name="email" id="email" required {{#if infoCorrecta.email}} value="{{infoCorrecta.email}}"{{/if}}>
+            <label for="email "><i class="fas fa-envelope"></i> Email</label> 
+         </div>
+         <div class="input-group">
+          <textarea name="mensaje" id="mensaje" rows="10" required>{{infoCorrecta.mensaje}}</textarea>
+            <label for="mensaje"><i class="fas fa-comments"></i> Mensaje</label> 
+         </div>
+         <button type="submit">Enviar</button>
+         <div class="mensaje-enviado">
+         {{estadoMensaje}}
+         </div>
+              <div class="errores">
+            {{#each erroresArr}}
+ <p>{{msg}}</p>
+    {{/each}}
+    </div>
+        </form>
+        <div class="pie-pagina">
+          {{>footer}}
+          </div>
+    </div>
+  
+</section>
+</main>
+</body>
+</html>
